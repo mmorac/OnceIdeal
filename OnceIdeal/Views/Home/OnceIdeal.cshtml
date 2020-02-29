@@ -1,0 +1,53 @@
+﻿@model List<List<OnceIdeal.Models.Jugador>>
+
+@{
+    ViewBag.Title = "OnceIdeal";
+}
+
+
+<h2>SIFUT - Once Ideal</h2>
+
+<select>
+
+    <option>
+        1
+    </option>
+    <option>
+        2
+    </option>
+    <option>
+        Acumulado
+    </option> 
+
+</select>
+
+
+<table style="background-image: url('../../img/Cancha.jpg'); background-size: cover; font-weight: bold; color: white;">
+    <tr>
+        <td>
+            <div style="text-align: center;">
+                @foreach (var lista in Model)
+                {
+                    <table>
+                        <tr style="height: 10em; width:200em;">
+                            <td style="width:200em;">
+                                <div class="linea">
+                                    @foreach (var j in lista) { 
+                                    <div class="cartaJugador">
+                                        <img src="@Url.Content(String.Format("~/img/{0}.png", j.club))" /><br />
+                                        <p style="color: black; background-color: rgba(255, 255, 255, 0.4)">
+                                            @Html.DisplayFor(modelItem => j.nombre)<br />
+                                            @Html.DisplayFor(modelItem => j.puntuacion)
+                                        </p>
+                                    </div>
+                                    }
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                }
+            </div>
+        </td>
+    </tr>
+
+</table>

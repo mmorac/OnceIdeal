@@ -1,0 +1,35 @@
+﻿@model IEnumerable<IEnumerable<OnceIdeal.Models.Jugador>>
+
+@{
+    ViewBag.Title = "Once";
+}
+
+<h2>Once</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+@foreach (var lista in Model) {
+    <tr>
+        @foreach (var item in lista)
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.posicion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.club)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.puntuacion)
+            </td>
+
+        }
+
+    </tr>
+}
+
+</table>
