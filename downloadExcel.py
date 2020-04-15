@@ -1,44 +1,25 @@
 import dropbox
 import os
-
-def download(dbx, folder, subfolder, name):
-    """Download a file.
-    Return the bytes of the file, or None if it doesn't exist.
-    """
-    path = '/%s/%s/%s' % (folder, subfolder.replace(os.path.sep, '/'), name)
-    while '//' in path:
-        path = path.replace('//', '/')
-    with stopwatch('download'):
-        try:
-            md, res = dbx.files_download(path)
-        except dropbox.exceptions.HttpError as err:
-            print('*** HTTP error', err)
-            return None
-    data = res.content
-    print(len(data), 'bytes; md:', md)
-    return data
-
-def stopwatch(message):
-    """Context manager to print how long a block of code took."""
-    t0 = time.time()
-    try:
-        yield
-    finally:
-        t1 = time.time()
-        print('Total elapsed time for %s: %.3f' % (message, t1 - t0))
+import pandas as pd
 
 #SE GENERA EL ACCESO A DROPBOX USANDO LA CLAVE QUE GENERO DESDE MI CUENTA
 dbx = dropbox.Dropbox("JK894OVzkD8AAAAAAAABql5v19mpIfSZx9k8I6cZCwkoSb7l-2tB9MAZw0hl2uVT")
 
-try:
-    dbx.users_get_current_account()
-except AuthError:
-    print("Token inválido, intente generar uno nuevo")
+#Lista de digitadores
+digitadores = ["Alejandro", "Cristian", "Gabriel", "Greivin", "Gustavo", "Irving", "Jonathan", "Mario"]
 
-for entry in dbx.files_list_folder("").entries:
-    print(entry.name)
+download_required = False
+
+if(download_required):
+    #Se recorre la lista de digitadores para descargar sus archivos respectivos
+    for digitador in digitadores:
+        with open(digitador + ".xlsx", "wb") as f:
+            #Se usará el método files_download de la librería de DROPBOX para la descarga
+            metadata, res = dbx.files_download(path="/2020 Torneo de Clausura/Control de jornadas de jugadores y clubes TC 2020 " + digitador + ".xlsx")
+            f.write(res.content)
+            print("¡Archivo de", digitador, "exitosamente descargado!")
 
 
-data = download(dbx, "2020 Torneo de Clausura", "", "Control de jornadas de jugadores y clubes TC 2020 Mario")
-
-print(data)
+df = pd.read_excel(r"Mario.xlsx")
+jugadores = pd.DataFrame(df, columns=["id_jugador"])
+print(jugadores)
