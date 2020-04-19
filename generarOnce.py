@@ -31,8 +31,55 @@ delanteros = {}
 
 once = reg_jornada.sort_values(["IRJ_General"], ascending = False)
 
+#Se separan los puntajes por posición de jugador
 for index, fila in once.iterrows():
-    info_basica = jugadores.loc[jugadores["IDJugador"] == fila["id_jugador"]]
+	info_basica = jugadores.loc[jugadores["IDJugador"] == fila["id_jugador"]]
+	posicion = info_basica.iloc[0]["Posición"]
+	if(posicion == "Portero"):
+		if(fila["id_jugador"] in porteros.keys()):
+			porteros[fila["id_jugador"]][2] += fila["IRJ_General"]
+		else:
+			porteros[fila["id_jugador"]] = [fila["NombreJugador"], clubes[fila["id_club"]], fila["IRJ_General"], posicion]
+	if(posicion == "Defensa"):
+		if(fila["id_jugador"] in defensas.keys()):
+			defensas[fila["id_jugador"]][2] += fila["IRJ_General"]
+		else:
+			defensas[fila["id_jugador"]] = [fila["NombreJugador"], clubes[fila["id_club"]], fila["IRJ_General"], posicion]
+	if(posicion == "Volante"):
+		if(fila["id_jugador"] in volantes.keys()):
+			volantes[fila["id_jugador"]][2] += fila["IRJ_General"]
+		else:
+			volantes[fila["id_jugador"]] = [fila["NombreJugador"], clubes[fila["id_club"]], fila["IRJ_General"], posicion]
+	if(posicion == "Delantero"):
+		if(fila["id_jugador"] in delanteros.keys()):
+			delanteros[fila["id_jugador"]][2] += fila["IRJ_General"]
+		else:
+			delanteros[fila["id_jugador"]] = [fila["NombreJugador"], clubes[fila["id_club"]], fila["IRJ_General"], posicion]
 
 
-once = once.head(11)
+#Se obtiene una vista ordenada de las diferentes posiciones
+porteros_o = sorted(porteros.items(), key = lambda kv:kv[1][2], reverse = True)
+defensas_o = sorted(defensas.items(), key = lambda kv:kv[1][2], reverse = True)
+volantes_o = sorted(volantes.items(), key = lambda kv:kv[1][2], reverse = True)
+delanteros_o = sorted(delanteros.items(), key = lambda kv:kv[1][2], reverse = True)
+
+df = 3
+mc = 4
+dl = 3
+
+onceideal = []
+
+onceideal.append(porteros_o[0])
+
+for i in range(0, df):
+	onceideal.append(defensas_o[i])
+
+for i in range(0, mc):
+	onceideal.append(volantes_o[i])
+
+for i in range(0, dl):
+	onceideal.append(delanteros_o[i])
+
+for j in onceideal:
+	print(j[1][3], "-", j[1][0], "- Club:", j[1][1], "Puntaje -", j[1][2])
+	
