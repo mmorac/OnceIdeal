@@ -13,7 +13,7 @@ Las siguientes tareas serán, usando Pandas, poder manipular la información de 
 Se agregó la funcionalidad de obtener toda la información de un archivo de Excel.
 La siguiente tarea será la consolidación de la información de todos los archivos para poder crear visualizaciones.
 
-19/04/2020
+18/04/2020
 
 Se consolidó la información de todos los archivos de digitación
 Se agregó la lectura de la base completa de jugadores de primera división con código y posición
@@ -21,3 +21,9 @@ Se agregó funcionalidad para obtener los registros por rangos de jornadas
 Se colocaron los archivos de Excel y el archivo de texto con la llave del API en carpetas separadas para protección de la información sensible
 
 Siguiente tarea: Separar jugadores por posición para así poder seleccionar el once ideal teniendo en cuenta la posición
+
+19/04/2020
+
+Se obtuvo el once ideal correctamente
+
+Siguiente tarea: Graficar

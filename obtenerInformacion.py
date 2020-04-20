@@ -38,6 +38,7 @@ def obtenerInformacion(descarga_requerida, api_key):
         info = pd.concat([info, df])
     return info
 
+#Función para obtener la lista completa de jugadores con código y posición
 def obtenerJugadores():
     df = pd.read_excel(os.environ['USERPROFILE'] + "/Documents/SIFUTBases/Listado de Jugadores con Código TC 2020.xlsx", "Listado jugadores")
     return df
