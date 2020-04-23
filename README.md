@@ -27,3 +27,9 @@ Siguiente tarea: Separar jugadores por posición para así poder seleccionar el 
 Se obtuvo el once ideal correctamente
 
 Siguiente tarea: Graficar
+
+22/04/2020
+
+Se generó el sitio web con Flask
+
+Siguiente tarea: Mostrar la graficación en la web
