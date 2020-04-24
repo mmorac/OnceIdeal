@@ -1,0 +1,40 @@
+.cancha{
+  background-image: url("Cancha.jpg");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.encabezado{
+  text-align: center;
+  height: 10em;
+  width: 100%;
+  background-color: red;
+}
+
+img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.once{
+  background-color: rgb(68, 153, 37);
+}
+
+.linea{
+  height: 15em;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.tarjetajugador{
+  display: inline-block;
+  height: 5em;
+  width: 12em;
+  background-color: rgba(255, 255, 255, 0.6);
+  font-weight: bold;
+}
+
+.calificacion{
+  font-size: 25px;
+}

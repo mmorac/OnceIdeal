@@ -61,9 +61,10 @@ def generarOnce(j_inicio, j_fin, formacion):
     volantes_o = sorted(volantes.items(), key = lambda kv:kv[1][2], reverse = True)
     delanteros_o = sorted(delanteros.items(), key = lambda kv:kv[1][2], reverse = True)
 
-    df = formacion[0]
-    mc = formacion[1]
-    dl = formacion[2]
+
+    df = int(formacion.split("-")[0])
+    mc = int(formacion.split("-")[1])
+    dl = int(formacion.split("-")[2])
 
     onceideal = []
 
@@ -77,3 +78,20 @@ def generarOnce(j_inicio, j_fin, formacion):
 
     for i in range(0, dl):
     	onceideal.append(delanteros_o[i])
+
+    lista = []
+
+    for j in onceideal:
+        j = list(j[1])
+        nombre = j[0]
+        nombre = nombre.split()
+        if(len(nombre) > 3):
+            nombre = str(nombre[0][0]) + ". " + str(nombre[2])
+        else:
+            nombre = str(nombre[0][0]) + ". " + str(nombre[1])
+
+        j[0] = nombre
+        j[2] = int(j[2])
+        lista.append(j)
+
+    return lista

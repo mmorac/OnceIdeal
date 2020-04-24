@@ -8,6 +8,144 @@
   {{super()}}
 {% endblock %}
 {% block content %}
-  <h1 class="titulo"> Visualizar </h1>
-  <img src="img/cancha.jpg">
+  <h1> Visualizar </h1>
+
+  <table width="100%">
+    <tr>
+      <td width="10%">
+          {% for i in range (1, jornadas + 1) %}
+          <input type="checkbox" value="{{i}}"> Jornada {{i}}</input> <br>
+          {% endfor %}
+      </td>
+      <td width="70%">
+        <table class="cancha">
+          <tr>
+            <td class="linea">
+              {% for jugador in once %}
+                {% if jugador[3] == "Portero" %}
+                <div class="tarjetajugador">
+                  <table>
+                    <tr>
+                      <td>
+                        <img src="../static/img/{{jugador[1]}}.png">
+                      </td>
+                      <td>
+                        <table>
+                          <tr>
+                            <td>
+                              {{jugador[0]}}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="calificacion">
+                              {{jugador[2]}}
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                {% endif %}
+              {% endfor %}
+            </td>
+          </tr>
+          <tr>
+            <td class="linea">
+              {% for jugador in once %}
+                {% if jugador[3] == "Defensa" %}
+                <div class="tarjetajugador">
+                  <table>
+                    <tr>
+                      <td>
+                        <img src="../static/img/{{jugador[1]}}.png">
+                      </td>
+                      <td>
+                        <table>
+                          <tr>
+                            <td>
+                              {{jugador[0]}}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="calificacion">
+                              {{jugador[2]}}
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                {% endif %}
+              {% endfor %}
+            </td>
+          </tr>
+          <tr>
+            <td class="linea">
+              {% for jugador in once %}
+                {% if jugador[3] == "Volante" %}
+                <div class="tarjetajugador">
+                  <table>
+                    <tr>
+                      <td>
+                        <img src="../static/img/{{jugador[1]}}.png">
+                      </td>
+                      <td>
+                        <table>
+                          <tr>
+                            <td>
+                              {{jugador[0]}}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="calificacion">
+                              {{jugador[2]}}
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                {% endif %}
+              {% endfor %}
+            </td>
+          </tr>
+          <tr>
+            <td class="linea">
+              {% for jugador in once %}
+                {% if jugador[3] == "Delantero" %}
+                <div class="tarjetajugador">
+                  <table>
+                    <tr>
+                      <td>
+                        <img src="../static/img/{{jugador[1]}}.png">
+                      </td>
+                      <td>
+                        <table>
+                          <tr>
+                            <td>
+                              {{jugador[0]}}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="calificacion">
+                              {{jugador[2]}}
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                {% endif %}
+              {% endfor %}
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
 {% endblock %}

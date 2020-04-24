@@ -33,3 +33,9 @@ Siguiente tarea: Graficar
 Se generó el sitio web con Flask
 
 Siguiente tarea: Mostrar la graficación en la web
+
+23/04/2020
+
+Visualización completa del Once Ideal
+
+Tareas siguientes: Agregar envío de parámetros que servirán como filtros para la generación del once ideal con Pandas

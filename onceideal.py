@@ -1,4 +1,10 @@
 from flask import Flask, render_template, request
+import generarOnce
+import obtenerInformacion
+import pandas as pd
+import dropbox
+import os
+
 
 app = Flask(__name__)
 
@@ -15,4 +21,5 @@ def acerca_de():
 @app.route("/visualizar")
 
 def visualizar():
-    return render_template("visualizar.html")
+    once = generarOnce.generarOnce(7, 7, "3-5-2")
+    return render_template("visualizar.html", jornadas=8, once=once)
