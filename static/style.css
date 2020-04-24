@@ -1,3 +1,6 @@
+body{
+  text-align: center;
+}
 .cancha{
   background-image: url("Cancha.jpg");
   width: 100%;
@@ -37,4 +40,9 @@ img{
 
 .calificacion{
   font-size: 25px;
+}
+
+.descripcion{
+  width: 100%;
+  text-align: center;
 }
