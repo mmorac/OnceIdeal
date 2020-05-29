@@ -24,7 +24,7 @@
               {% for jugador in once %}
                 {% if jugador[3] == "Portero" %}
                 <div class="tarjetajugador">
-                  <table>
+                  <table class="jugador">
                     <tr>
                       <td>
                         <img src="../static/img/{{jugador[1]}}.png">
@@ -32,7 +32,7 @@
                       <td>
                         <table>
                           <tr>
-                            <td>
+                            <td class="nombre">
                               {{jugador[0]}}
                             </td>
                           </tr>
@@ -55,7 +55,7 @@
               {% for jugador in once %}
                 {% if jugador[3] == "Defensa" %}
                 <div class="tarjetajugador">
-                  <table>
+                  <table class="jugador">
                     <tr>
                       <td>
                         <img src="../static/img/{{jugador[1]}}.png">
@@ -63,7 +63,7 @@
                       <td>
                         <table>
                           <tr>
-                            <td>
+                            <td class="nombre">
                               {{jugador[0]}}
                             </td>
                           </tr>
@@ -86,7 +86,7 @@
               {% for jugador in once %}
                 {% if jugador[3] == "Volante" %}
                 <div class="tarjetajugador">
-                  <table>
+                  <table class="jugador">
                     <tr>
                       <td>
                         <img src="../static/img/{{jugador[1]}}.png">
@@ -94,7 +94,7 @@
                       <td>
                         <table>
                           <tr>
-                            <td>
+                            <td class="nombre">
                               {{jugador[0]}}
                             </td>
                           </tr>
@@ -117,7 +117,7 @@
               {% for jugador in once %}
                 {% if jugador[3] == "Delantero" %}
                 <div class="tarjetajugador">
-                  <table>
+                  <table class="jugador">
                     <tr>
                       <td>
                         <img src="../static/img/{{jugador[1]}}.png">
@@ -125,7 +125,7 @@
                       <td>
                         <table>
                           <tr>
-                            <td>
+                            <td class="nombre">
                               {{jugador[0]}}
                             </td>
                           </tr>

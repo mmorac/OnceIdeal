@@ -39,3 +39,9 @@ Siguiente tarea: Mostrar la graficación en la web
 Visualización completa del Once Ideal
 
 Tareas siguientes: Agregar envío de parámetros que servirán como filtros para la generación del once ideal con Pandas
+
+29/05/2020
+
+Se ajustó el algoritmo para poder filtrar por equipo y por jornadas y obtener un once ideal personalizado.
+
+Tareas siguientes: Agregar a la plataforma web el envío de los parámetros para definir el once ideal (jornadas, equipos, formación)
